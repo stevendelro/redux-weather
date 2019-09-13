@@ -1,5 +1,3 @@
-# redux-darksky
-
-* I've got the majority of the business logic wired up and ready to go.
-* Deciding on whether or not to utilize plain CSS and SASS, or to dive into React-SemanticUI.
 # redux-weather
+
+Looks like I need a git refresher. I had originally had this saved under the repo "redux-darksky". 
