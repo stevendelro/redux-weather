@@ -1,3 +1,4 @@
-# redux-weather
+# To do
 
-Looks like I need a git refresher. I had originally had this saved under the repo "redux-darksky". 
+ - Set up media queries to make the app responsive.
+ - Fine tune the styles for each media query.
