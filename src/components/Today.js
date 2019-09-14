@@ -1,7 +1,7 @@
 import React from 'react'
 import Skycons from 'react-skycons'
 import { connect } from 'react-redux'
-import { Grid } from 'semantic-ui-react'
+import { Grid, Label, Icon, Statistic, Divider } from 'semantic-ui-react'
 
 class Today extends React.Component {
   render() {
@@ -11,25 +11,38 @@ class Today extends React.Component {
     noData
       ? (renderedComponent = null)
       : (renderedComponent = (
-          <Grid textAlign='center' columns={3}>
+          <Grid style={{ margin: '3rem 0' }} textAlign='center' columns={3}>
             <Grid.Row>
-              <Grid.Column width={4}>
+              <Grid.Column width={4}></Grid.Column>
+              <Grid.Column width={8}>
+                <h1>{displayedPlace}</h1>
+                <Divider horizontal></Divider>
                 <Skycons
                   icon={currently.icon.replace(/-/g, '_').toUpperCase()}
-                  color='black'
                   autoplay={true}
                   style={{ width: '100%', height: 'auto', maxWidth: '150px' }}
                 />
-                <h1>{`${Math.round(currently.temperature)}°F`}</h1>
+                <Divider horizontal></Divider>
+                <Statistic>
+                  <Statistic.Value>{`${Math.round(
+                    currently.temperature
+                  )}°F`}</Statistic.Value>
+                </Statistic>
+                <Divider horizontal></Divider>
+                <Grid columns={2}>
+                  <Grid.Column>
+                    {`${Math.round(daily.data[0].temperatureMax)}°F`}
+                    <Icon name='caret up' size='big'></Icon>
+                  </Grid.Column>
+                  <Grid.Column>
+                    <Icon name='caret down' size='big'></Icon>
+                    {`${Math.round(daily.data[0].temperatureLow)}°F`}
+                  </Grid.Column>
+                </Grid>
+                <Divider horizontal></Divider>
+                {daily.summary}
               </Grid.Column>
-              <Grid.Column width={8}>
-                <h1>{displayedPlace}</h1>
-                <h4>{daily.summary}</h4>
-              </Grid.Column>
-              <Grid.Column width={4}>
-                <p>High: {`${Math.round(daily.data[0].temperatureMax)}°F`}</p>
-                <p>Low: {`${Math.round(daily.data[0].temperatureLow)}°F`}</p>
-              </Grid.Column>
+              <Grid.Column width={4}></Grid.Column>
             </Grid.Row>
           </Grid>
         ))

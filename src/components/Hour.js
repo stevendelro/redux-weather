@@ -10,7 +10,7 @@ const Hour = props => {
   hours = hours % 12 || 12
 
   return (
-    <div style={{ minWidth: '200px', textAlign: 'center' }}>
+    <div style={{ minWidth: '8rem', textAlign: 'center' }}>
       <h3 className='hour--time'>{`${hours} ${amOrPm}`}</h3>
       <Skycons 
         icon={props.icon} 
