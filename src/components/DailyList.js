@@ -8,7 +8,6 @@ const styles = {
   display: 'flex',
   width: '100%',
   justifyContent: 'space-between'
-
 } 
 
 class DailyList extends React.Component {

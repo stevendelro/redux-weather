@@ -3,8 +3,10 @@ import Search from './Search'
 import { Container, Menu } from 'semantic-ui-react'
 
 class Header extends React.Component {
-  state = { activeItem: 'home '}
+  state = { activeItem: 'history'}
+
   handleItemClick = ( e, { name }) => this.setState({ activeItem: name })
+
   render() {
     const { activeItem } = this.state
     return (
@@ -12,7 +14,7 @@ class Header extends React.Component {
         <Container>
           <Menu.Item 
             name='home' 
-            active={activeItem === 'home'}
+            active={activeItem === 'home' }
             onClick={this.handleItemClick}>
             
           </Menu.Item>

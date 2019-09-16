@@ -1,19 +1,29 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import uuid from 'uuid'
+import { List } from 'semantic-ui-react'
 
 class SearchHistory extends React.Component {
   render() {
     const historyList = this.props.historyList
       .map(item => (
-        <div key={uuid()}>
-          <h3>{item.location.toUpperCase()}</h3>
-          <p>{item.date}</p>
-          <p>{item.timeSearched}</p>
-        </div>
+        <List.Item key={uuid()}>
+          <List.Content floated='right'>
+            <List.Description>{item.date}</List.Description>
+            <List.Description>{item.timeSearched}</List.Description>
+          </List.Content>
+          <List.Icon name='clock' size='large' verticalAlign='middle' />
+          <List.Content>
+            <List.Header>{item.location.toUpperCase()}</List.Header>
+          </List.Content>
+        </List.Item>
       ))
       .reverse()
-    return <div>{this.props.empty ? <div></div> : historyList}</div>
+    return (
+      <List animated divided relaxed='very' size='massive' style={{ marginTop: '8rem' }}>
+        {this.props.empty ? null : historyList}
+      </List>
+    )
   }
 }
 

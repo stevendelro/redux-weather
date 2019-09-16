@@ -1,7 +1,7 @@
 import React from 'react'
 import Skycons from 'react-skycons'
 import { connect } from 'react-redux'
-import { Grid, Label, Icon, Statistic, Divider } from 'semantic-ui-react'
+import { Grid, Icon, Statistic, Divider } from 'semantic-ui-react'
 
 class Today extends React.Component {
   render() {
