@@ -1,29 +1,23 @@
 import React from 'react'
 import './App.css'
 import { Container } from 'semantic-ui-react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+
 import Header from './components/Header'
 import SearchHistory from './components/SearchHistory'
-
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import HourlyList from './components/HourlyList'
-import DailyList from './components/DailyList'
-import Today from './components/Today'
-
-
+import MainDisplay from './components/MainDisplay'
 
 function App() {
   return (
-    <div className='App'>
+    <Router className='App'>
       <Header />
       <Container>
-        <SearchHistory />
-        {/* <Today />
-        <HourlyList />
-        <DailyList /> */}
+        <Switch>
+          <Route exact path='/' component={MainDisplay} />
+          <Route exact path='/history' component={SearchHistory} />
+        </Switch>
       </Container>
-
-      
-    </div>
+    </Router>
   )
 }
 
