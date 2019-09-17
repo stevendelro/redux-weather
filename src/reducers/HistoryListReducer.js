@@ -13,6 +13,7 @@ export default (state = INITIAL_STATE, action) => {
 
   switch (action.type) {
     case 'LOG_LAST_CITY': {
+      // Splicing the history list to keep the most recent 7 searches.
       if (state.historyList.length > 7) {
         return {
           empty: false,

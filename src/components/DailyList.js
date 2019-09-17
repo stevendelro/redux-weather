@@ -23,12 +23,14 @@ class DailyList extends React.Component {
     if (noData) {
       renderedComponent = null
     } else {
+      // .slice removes the current day from the 7 week forecast.
       renderedComponent = daily.data
         .slice(1)
         .map(({ time, icon, temperatureHigh, temperatureLow }, index) => (
           <Day
             key={uuid()}
             time={time}
+            // formating icon name to match the Skycon API
             icon={icon.replace(/-/g, '_').toUpperCase()}
             tempHi={temperatureHigh}
             tempLo={temperatureLow}

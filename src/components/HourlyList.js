@@ -21,6 +21,7 @@ class HourlyList extends React.Component {
         <Hour
           key={uuid()}
           time={time}
+          // Format icon text to match the Skycon API
           icon={icon.replace(/-/g, '_').toUpperCase()}
           temp={temperature}
         />

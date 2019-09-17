@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+// Use your own tokens!
 const mapBoxToken =
   'pk.eyJ1Ijoic3RldmVuZGVscm9zYXJpbyIsImEiOiJjanl2Zndpbmwwb3p3M2lta2xyNjlhc3Q0In0.EUeki9FFRcyDIirOGn26vw'
 const proxy = 'https://cors-anywhere.herokuapp.com/'
@@ -12,6 +13,7 @@ export const fetchWeather =  location => {
   const darkSkiesUrl = `https://api.darksky.net/forecast/${darkSkyToken}/`
 
   return dispatch => {
+    // Get coordinates and place name
     axios
     .get(mapBoxUrl)
     .then(async geocodeData => {
@@ -19,6 +21,7 @@ export const fetchWeather =  location => {
       const lat = geocodeData.data.features[0].center[1]
       const place = geocodeData.data.features[0].place_name
 
+      // Use coordinates to get weather data.
       await axios
         .get(`${proxy}${darkSkiesUrl}${lat},${long}?exclude=flags`)
         .then(request => {
