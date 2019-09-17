@@ -1,5 +1,3 @@
-## An iPhone Weather App clone. Built with React and the Dark Sky API
-
 ![](demo.gif)
 
 ### How it works:
