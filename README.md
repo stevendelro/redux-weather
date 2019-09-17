@@ -1,9 +1,5 @@
 ## An iPhone Weather App clone. Built with React and the Dark Sky API
 
-### DEMO
-
-![](demo.gif)
-
 ### How it works:
 
 1. User input fires off a call to the [MapBox API](https://www.mapbox.com/) and retrieves coordinates and the place name:
