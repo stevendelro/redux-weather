@@ -12,7 +12,7 @@ class SearchHistory extends React.Component {
             <List.Description>{item.date}</List.Description>
             <List.Description>{item.timeSearched}</List.Description>
           </List.Content>
-          <List.Icon name='clock' size='large' verticalAlign='middle' />
+          <List.Icon name='clock outline' size='large' verticalAlign='middle' />
           <List.Content>
             <List.Header>{item.location.toUpperCase()}</List.Header>
           </List.Content>

@@ -13,12 +13,12 @@ export default (state = INITIAL_STATE, action) => {
 
   switch (action.type) {
     case 'LOG_LAST_CITY': {
-      if (state.historyList.length > 4) {
+      if (state.historyList.length > 7) {
         return {
           empty: false,
           historyList: [
             ...state.historyList.splice(
-              state.historyList.length - 4,
+              state.historyList.length - 7,
               state.historyList.length
             ),
             {
