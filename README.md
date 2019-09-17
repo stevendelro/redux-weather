@@ -2,7 +2,7 @@
 
 ### DEMO
 
-(coming soon)
+![](demo.gif)
 
 ### How it works:
 
