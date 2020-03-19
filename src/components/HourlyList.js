@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Header, Icon, Segment } from 'semantic-ui-react'
 import Hour from './Hour'
 import uuid from 'uuid'
 
@@ -15,7 +16,14 @@ class HourlyList extends React.Component {
     const { hourly, noData } = this.props.weather
     let renderedComponent
     if (noData) {
-      renderedComponent = <div></div>
+      renderedComponent = (
+        <Segment placeholder>
+        <Header icon>
+          <Icon disabled name='umbrella' />
+          <p>Umbrellapp</p>
+        </Header>
+      </Segment>
+      )
     } else {
       renderedComponent = hourly.data.map(({ time, icon, temperature }) => (
         <Hour
@@ -27,7 +35,8 @@ class HourlyList extends React.Component {
         />
       ))
     }
-    return <div style={styles}>{renderedComponent}</div>
+
+    return <Segment.Group horizontal style={styles}>{renderedComponent}</Segment.Group>
   }
 }
 

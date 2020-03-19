@@ -1,5 +1,6 @@
 import React from 'react'
 import Skycons from 'react-skycons'
+import { Segment, Header } from 'semantic-ui-react'
 
 const Hour = props => {
   const timestamp = props.time
@@ -10,16 +11,21 @@ const Hour = props => {
   hours = hours % 12 || 12
 
   return (
-    <div style={{ minWidth: '8rem', textAlign: 'center' }}>
-      <h3 className='hour--time'>{`${hours} ${amOrPm}`}</h3>
-      <Skycons 
-        icon={props.icon} 
+    <Segment style={{ minWidth: '8rem', textAlign: 'center' }}>
+      <Header style={{ paddingTop: '1rem' }}>{`${hours} ${amOrPm}`}</Header>
+      <Skycons
+        icon={props.icon}
         color='black'
         autoplay={true}
-        style={{width: '100%', height: 'auto', maxWidth: '150px'}}
-        />
-      <p className='hour--temp'>{`${Math.round(props.temp)}°F`}</p>
-    </div>
+        style={{
+          width: '100%',
+          height: 'auto',
+          maxWidth: '150px',
+          paddingTop: '1rem'
+        }}
+      />
+      <p style={{ paddingTop: '2rem' }}>{`${Math.round(props.temp)}°F`}</p>
+    </Segment>
   )
 }
 

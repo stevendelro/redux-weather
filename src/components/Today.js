@@ -1,7 +1,14 @@
 import React from 'react'
 import Skycons from 'react-skycons'
 import { connect } from 'react-redux'
-import { Grid, Icon, Statistic, Divider } from 'semantic-ui-react'
+import {
+  Grid,
+  Icon,
+  Statistic,
+  Divider,
+  Message,
+  Label
+} from 'semantic-ui-react'
 
 class Today extends React.Component {
   render() {
@@ -13,9 +20,11 @@ class Today extends React.Component {
       : (renderedComponent = (
           <Grid style={{ margin: '3rem 0' }} textAlign='center' columns={3}>
             <Grid.Row>
-              <Grid.Column width={4}></Grid.Column>
-              <Grid.Column width={8}>
-                <h1>{displayedPlace}</h1>
+              <Grid.Column computer={4} tablet={2} mobile={1}></Grid.Column>
+              <Grid.Column computer={8} tablet={10} mobile={11}>
+                <Message size='huge'>
+                  <Message.Header>{displayedPlace}</Message.Header>
+                </Message>
                 <Divider horizontal></Divider>
                 <Skycons
                   icon={currently.icon.replace(/-/g, '_').toUpperCase()}
@@ -31,18 +40,22 @@ class Today extends React.Component {
                 <Divider horizontal></Divider>
                 <Grid columns={2}>
                   <Grid.Column>
-                    {`${Math.round(daily.data[0].temperatureMax)}°F`}
-                    <Icon name='caret up' size='big'></Icon>
+                    <Label basic color='red'>
+                      <Icon name='caret up' size='big' />
+                      {`${Math.round(daily.data[0].temperatureMax)}°F`}
+                    </Label>
                   </Grid.Column>
                   <Grid.Column>
-                    <Icon name='caret down' size='big'></Icon>
-                    {`${Math.round(daily.data[0].temperatureLow)}°F`}
+                    <Label basic color='blue'>
+                      <Icon name='caret down' size='big' />
+                      {`${Math.round(daily.data[0].temperatureLow)}°F`}
+                    </Label>
                   </Grid.Column>
                 </Grid>
                 <Divider horizontal></Divider>
-                {daily.summary}
+                <Message>{daily.summary}</Message>
               </Grid.Column>
-              <Grid.Column width={4}></Grid.Column>
+              <Grid.Column computer={4} tablet={2} mobile={1}></Grid.Column>
             </Grid.Row>
           </Grid>
         ))

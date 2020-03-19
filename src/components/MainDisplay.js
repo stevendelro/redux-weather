@@ -5,11 +5,11 @@ import Today from './Today'
 
 function MainDisplay() {
   return (
-    <div>
+    <>
       <Today />
       <HourlyList />
       <DailyList />
-    </div>
+    </>
   )
 }
 

@@ -7,13 +7,15 @@ import Media from 'react-media'
 const largeScreenStyles = {
   display: 'flex',
   width: '100%',
-  justifyContent: 'space-between'
+  justifyContent: 'space-between',
+  marginBottom: '3rem'
 }
 const smallerScreenStyles = {
   display: 'flex',
   flexFlow: 'column',
   width: '100%',
-  justifyContent: 'space-between'
+  justifyContent: 'space-between',
+  marginBottom: '3rem'
 }
 
 class DailyList extends React.Component {
