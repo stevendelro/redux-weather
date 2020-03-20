@@ -1,6 +1,6 @@
 ![](demo.gif)
 
-#[LIVE DEMO](https://redux-weather-cm85uhch7.now.sh/)
+# [LIVE DEMO](https://redux-weather-cm85uhch7.now.sh/)
 
 ### How it works:
 
