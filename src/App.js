@@ -1,5 +1,4 @@
 import React from 'react'
-import './App.css'
 import { Container } from 'semantic-ui-react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
