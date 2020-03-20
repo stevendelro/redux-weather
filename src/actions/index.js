@@ -1,10 +1,9 @@
 import axios from 'axios'
 
 // Use your own tokens!
-const mapBoxToken =
-  'pk.eyJ1Ijoic3RldmVuZGVscm9zYXJpbyIsImEiOiJjanl2Zndpbmwwb3p3M2lta2xyNjlhc3Q0In0.EUeki9FFRcyDIirOGn26vw'
+const mapBoxToken = process.env.REACT_APP_MAPBOX_TOKEN
 const proxy = 'https://cors-anywhere.herokuapp.com/'
-const darkSkyToken = '49672afaebb7601daeb3e11bb45cc16f'
+const darkSkyToken = process.env.REACT_APP_DARKSKY_TOKEN
 
 export const fetchWeather =  location => {
   const mapBoxUrl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(

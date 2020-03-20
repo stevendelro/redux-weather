@@ -10,6 +10,12 @@ import {
   Label
 } from 'semantic-ui-react'
 
+const skyconStyles = { 
+  width: '100%', 
+  height: 'auto', 
+  maxWidth: '150px' 
+}
+
 class Today extends React.Component {
   render() {
     const { currently, daily, noData, displayedPlace } = this.props.weather
@@ -29,7 +35,7 @@ class Today extends React.Component {
                 <Skycons
                   icon={currently.icon.replace(/-/g, '_').toUpperCase()}
                   autoplay={true}
-                  style={{ width: '100%', height: 'auto', maxWidth: '150px' }}
+                  style={skyconStyles}
                 />
                 <Divider horizontal></Divider>
                 <Statistic>

@@ -25,6 +25,13 @@ const Day = props => {
     width: '100%'
   }
 
+  const skyconStyles = {
+    width: '100%',
+    height: 'auto',
+    maxWidth: '150px',
+    marginTop: '2rem'
+  }
+
   const day = (
     <Segment placeholder raised>
       <Header icon>
@@ -34,12 +41,7 @@ const Day = props => {
             icon={props.icon}
             color='black'
             autoplay={true}
-            style={{
-              width: '100%',
-              height: 'auto',
-              maxWidth: '150px',
-              marginTop: '2rem'
-            }}
+            style={skyconStyles}
           />
         </Icon>
       </Header>
